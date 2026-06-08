@@ -72,10 +72,10 @@ The domain I chose is student life for San Diego State University. This knowledg
 | # | Question | Expected answer |
 |---|----------|-----------------|
 | 1 | "How big is greek life?" | "Greek life has an important presence within San Diego State University" |
-| 2 | "What does the meal plan look like?" | "The meal plan gives you access to many third-party establishments operating within San Diego State University. However, there are no traditional dining halls." |
+| 2 | "How do students feel about the dorms?" | "Students have complaints over the dorms, but some indicate better housing second year" |
 | 3 | "What is a good professor for my communications general education credit?" | "Micheal Rapp is a well-liked communications professor, having high praise from students according to his RateMyProfessor reviews" |
-| 4 | "What are some easy | |
-| 5 | | |
+| 4 | "How is student life like outside of greek life?" | "Students communicate a great variety of clubs and sport activites are available outside of greek life, allowing oppurtunities for a good social life outside of greek life" |
+| 5 | "How easy is it to get the classes I want?" | "Students report difficulty in obtaining the classes they want" |
 
 ---
 
@@ -85,9 +85,9 @@ The domain I chose is student life for San Diego State University. This knowledg
      Consider: noisy or inconsistent documents, missing source attribution, off-topic
      retrieval, chunks that split key information across boundaries. -->
 
-1.
+1. Chunks that contain multiple, short reviews with vastly differeing opinions. These can make the chunk incomprehensible as the context is wildly conflicting and ends up becoming totally useless, a key drawback of the fixed-character chunking strategy especially when it spans across platforms that have totally different kinds of posts (short concise reviews vs long detailed explanations)
 
-2.
+2. Inconsistent documents, especially when trying to pull information from a page, such as RateMyProfessors, which can be loaded with ads and other irrelevant information for the purposes of this system.
 
 ---
 
@@ -115,8 +115,8 @@ The domain I chose is student life for San Diego State University. This knowledg
      "I'll give Claude my Chunking Strategy section and ask it to implement chunk_text()
      with my specified chunk size and overlap" is a plan. -->
 
-**Milestone 3 — Ingestion and chunking:**
+**Milestone 3 — Ingestion and chunking: I will try to have Claude build a webscraper that will extract the most relevant information for websites that do not have an API or save the HTML file and clean the HTML code into a simple text file with only the relevant information, and use the respective APIs for information otherwise. I will then feed this information into a chunking method to create chunks that will then be passed into the embedder.**
 
-**Milestone 4 — Embedding and retrieval:**
+**Milestone 4 — Embedding and retrieval: I will pass this into the all-MiniLM-L6-v2 model which will transform the chunk into a 384-dimensional vector that can easily be stored in Chroma DB using an embedding function. I will use this same function on the user query and compare it to the vectors already stored in the database to find matches.**
 
-**Milestone 5 — Generation and interface:**
+**Milestone 5 — Generation and interface: I will pass the relevant chunks through the Groq API using a function with a system prompt to ensure the answer is generated mostly or completely from the chunks given and use Gradio as the interface.**
