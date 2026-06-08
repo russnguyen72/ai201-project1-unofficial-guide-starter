@@ -11,6 +11,8 @@
 
 <!-- What domain did you choose? Why is this knowledge valuable and hard to find through official channels? -->
 
+The domain I chose is student life for San Diego State University. This knowledge is valuable because it allows people to understand what life may be like when they finally attend San Diego State University. This is also hard to find through official channels as the official channels will never talk about the downsides about student life as they want to seem the most desireable to prospective students.
+
 ---
 
 ## Documents
@@ -20,16 +22,12 @@
 
 | # | Source | Description | URL or location |
 |---|--------|-------------|-----------------|
-| 1 | | | |
-| 2 | | | |
-| 3 | | | |
-| 4 | | | |
-| 5 | | | |
-| 6 | | | |
-| 7 | | | |
-| 8 | | | |
-| 9 | | | |
-| 10 | | | |
+| 1-5 | RateMyProfessor | A place where students can rate their professors to other students about the style that a professor teaches their course. Multiple professor pages will be used as sources from this website. | https://www.ratemyprofessors.com/ |
+| 6 | r/SDSU | A subreddit dedicated for the students of and the community around San Diego State University to discuss San Diego State University | https://www.reddit.com/r/SDSU/ |
+| 7 | Niche | A website dedicated to help prospective student and parents find out about the colleges they are going to and how they perform relative to other colleges | https://www.niche.com/colleges/san-diego-state-university/ |
+| 8 | College Confidential | A Q&A forum board where prospective students can ask about the college they want to attend | https://talk.collegeconfidential.com/c/colleges-and-universities/san-diego-state-university/445 |
+| 9 | Greek Rank | Rankings and reviews about the greek life at a university | https://www.greekrank.net/uni/69/greek-life/ |
+| 10 | Unigo | Reviews about a specific college written by prospective and currently attending students | https://www.unigo.com/colleges/san-diego-state-university/reviews?utm_content=see-all-reviews&utm_term=/colleges/san-diego-state-university |
 
 ---
 
