@@ -38,11 +38,11 @@ The domain I chose is student life for San Diego State University. This knowledg
      numbers fit the structure of your documents.
      A review-heavy corpus warrants different chunking than a long FAQ. -->
 
-**Chunk size:**
+**Chunk size: 1000 characters**
 
-**Overlap:**
+**Overlap: 200 characters**
 
-**Reasoning:**
+**Reasoning: Most posts made fall under the 1000 character mark, with some lengthy reviews hitting to this point. This means that we are not cramming too many conflicting shorter reviews (eg. reviews from RateMyProfessors) into one chunk, but making sure we still get the context from some longer reviews (eg. Unigo). The overlap is to ensure that the shorter reviews do not get split as they are as concise as possible and we want to keep what they are saying in mind. This fixed-sized character chunking will be the easiest to implement, so because of that, the overlap has to be large to get every review in context, even if it merges them together.**
 
 ---
 
@@ -54,11 +54,11 @@ The domain I chose is student life for San Diego State University. This knowledg
      would you weigh in choosing a different embedding model — context length, multilingual
      support, accuracy on domain-specific text, latency? -->
 
-**Embedding model:**
+**Embedding model: all-MiniLM-L6-v2**
 
-**Top-k:**
+**Top-k: 5**
 
-**Production tradeoff reflection:**
+**Production tradeoff reflection: Some tradeoffs I would weigh in if I was deploying this for real users is choosing an embedding model that does not have such a limited input window. Especially when it comes to the longer reddit posts and reviews, I would definitely use a model with a higher input window when I change the chunking strategy to make sure one chunk is one review or one post. I would also consider using an API instead of a self-hosted model to speed up latency so that prospective students with lots of questions can rapid fire questions as they recieve new answers from this system.**
 
 ---
 
@@ -71,10 +71,10 @@ The domain I chose is student life for San Diego State University. This knowledg
 
 | # | Question | Expected answer |
 |---|----------|-----------------|
-| 1 | | |
-| 2 | | |
-| 3 | | |
-| 4 | | |
+| 1 | "How big is greek life?" | "Greek life has an important presence within San Diego State University" |
+| 2 | "What does the meal plan look like?" | "The meal plan gives you access to many third-party establishments operating within San Diego State University. However, there are no traditional dining halls." |
+| 3 | "What is a good professor for my communications general education credit?" | "Micheal Rapp is a well-liked communications professor, having high praise from students according to his RateMyProfessor reviews" |
+| 4 | "What are some easy | |
 | 5 | | |
 
 ---
@@ -98,6 +98,8 @@ The domain I chose is student life for San Diego State University. This knowledg
      Label each stage with the tool or library you're using.
      You can use ASCII art, a Mermaid diagram, or embed a sketch as an image.
      You'll use this diagram as context when prompting AI tools to implement each stage. -->
+
+![alt text](image.png)
 
 ---
 
