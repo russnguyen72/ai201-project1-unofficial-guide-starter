@@ -1,13 +1,19 @@
 """Shared configuration for the RAG pipeline.
 
 Everything tunable lives here so the spec in planning.md maps to one place.
-Holds the chunking knobs, document source directories, and the
-embedding / vector-store settings; Groq settings are added in a later step.
+Holds the chunking knobs, document source directories, the embedding /
+vector-store settings, and the Groq generation settings.
 """
 
 from __future__ import annotations
 
+import os
 from pathlib import Path
+
+from dotenv import load_dotenv
+
+# Load .env at import time so any module that imports config gets GROQ_API_KEY.
+load_dotenv()
 
 # Project root = the directory that contains this `rag/` package.
 PROJECT_ROOT = Path(__file__).resolve().parent.parent
@@ -37,3 +43,7 @@ EMBED_MODEL_NAME = "all-MiniLM-L6-v2"
 CHROMA_DIR = PROJECT_ROOT / "chroma_db"  # on-disk store (gitignored)
 COLLECTION_NAME = "unofficial_guide"
 TOP_K = 5
+
+# Generation (from planning.md): grounded answers via Groq.
+GROQ_API_KEY = os.getenv("GROQ_API_KEY")
+GROQ_MODEL = "llama-3.3-70b-versatile"
