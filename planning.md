@@ -79,7 +79,7 @@ The domain I chose is class/professor selection for introductory classes, as wel
 | 2 | "Should I worry about the placement test?" | "If you have prerequisite math courses, you do not need to worry. The chemistry placement test also works in a similar fashion." |
 | 3 | "What is a good professor for my communications general education credit?" | "Micheal Rapp is a well-liked communications professor, having high praise from students according to his RateMyProfessor reviews" |
 | 4 | "Who is a math professor I should avoid?" | "Students say that Timothy Dunster reads off the slides and the lectures are very boring." |
-| 5 | "How easy is it to get the classes I want?" | "Students report difficulty in obtaining the classes they want" |
+| 5 | "How is the quality of SDSU classes?" | "Some report excellent professors and classes, but others report lackluster professors, so milage may vary." |
 
 ---
 

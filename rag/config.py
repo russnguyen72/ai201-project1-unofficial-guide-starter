@@ -1,8 +1,8 @@
 """Shared configuration for the RAG pipeline.
 
 Everything tunable lives here so the spec in planning.md maps to one place.
-Step 1 only needs the chunking knobs and the document source directories;
-embedding / vector-store / Groq settings are added in later steps.
+Holds the chunking knobs, document source directories, and the
+embedding / vector-store settings; Groq settings are added in a later step.
 """
 
 from __future__ import annotations
@@ -30,3 +30,10 @@ SOURCE_DIRS = [
     DOCUMENTS_ROOT / "reddit" / "clean",
     DOCUMENTS_ROOT / "niche",
 ]
+
+# Embedding + vector store (from planning.md): all-MiniLM-L6-v2 -> 384-dim
+# vectors stored in a persistent ChromaDB collection, top-5 retrieval.
+EMBED_MODEL_NAME = "all-MiniLM-L6-v2"
+CHROMA_DIR = PROJECT_ROOT / "chroma_db"  # on-disk store (gitignored)
+COLLECTION_NAME = "unofficial_guide"
+TOP_K = 5

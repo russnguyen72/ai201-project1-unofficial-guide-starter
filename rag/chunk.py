@@ -38,11 +38,16 @@ def chunk_text(text: str, size: int = CHUNK_SIZE, overlap: int = CHUNK_OVERLAP) 
     return chunks
 
 
-def chunk_documents(documents: list[dict] | None = None) -> list[dict]:
+def chunk_documents(
+    documents: list[dict] | None = None,
+    include_source_prefix: bool = True,
+) -> list[dict]:
     """Chunk every document into ``{"text", "source", "chunk_index"}`` records.
 
-    The source label is prepended to each chunk's text so it is embedded
-    alongside the content and is available for citation at generation time.
+    With ``include_source_prefix`` (the default) the source label is prepended
+    to each chunk's text. The vector store (stage 3) keeps the source in
+    metadata instead, so it passes ``include_source_prefix=False`` to embed the
+    bare chunk content and keep the vectors free of repeated boilerplate.
     """
     if documents is None:
         documents = load_documents()
@@ -50,8 +55,9 @@ def chunk_documents(documents: list[dict] | None = None) -> list[dict]:
     records: list[dict] = []
     for doc in documents:
         for i, chunk in enumerate(chunk_text(doc["text"])):
+            text = f"[Source: {doc['source']}]\n{chunk}" if include_source_prefix else chunk
             records.append({
-                "text": f"[Source: {doc['source']}]\n{chunk}",
+                "text": text,
                 "source": doc["source"],
                 "chunk_index": i,
             })
